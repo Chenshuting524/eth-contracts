@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"payable": true,
+				"stateMutability": "payable",
+				"type": "fallback"
+			}
+		],
+		"devdoc": {
+			"details": "Implements delegation of calls to other contracts, with proper forwarding of return values and bubbling of failures. It defines a fallback function that delegates all calls to the address returned by the abstract _implementation() internal function.",
+			"methods": {},
+			"title": "Proxy"
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"eth-contracts/contracts/core/cross_chain_manager/libs/upgradeability/Proxy.sol": "Proxy"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"eth-contracts/contracts/core/cross_chain_manager/libs/upgradeability/Proxy.sol": {
+			"keccak256": "0x26efbdd738c25421b9578b6539173c16ac16637e2516b81e1d86f689ce1ffa1d",
+			"urls": [
+				"bzz-raw://5aaf94ffdd8a3be4c33aa0a27a54171a22830fb0aae0057b89e6462210d9952f",
+				"dweb:/ipfs/QmXtfDGYTdGG5uGAw8TUag3H8LZJ4QVQJ4KtwqoDieRZee"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,75 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint64",
+						"name": "_toChainId",
+						"type": "uint64"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_toContract",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_method",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_txData",
+						"type": "bytes"
+					}
+				],
+				"name": "crossChain",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Interface of the EthCrossChainManager contract for business contract like LockProxy to request cross chain transaction",
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"eth-contracts/contracts/core/lockProxy/interface/IEthCrossChainManager.sol": "IEthCrossChainManager"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"eth-contracts/contracts/core/lockProxy/interface/IEthCrossChainManager.sol": {
+			"keccak256": "0x59a7e599c211fd1c00aec76965d020cb8438b1b89cdf4c80baa50112d8b6ce9e",
+			"urls": [
+				"bzz-raw://2d78cc653d490d4d897b0a90cb39f81477e4bec714bcc038e306b41e6d81beb6",
+				"dweb:/ipfs/QmVb9Nvp3CnuZfi9SCVDzSD2JZgDtkUPAwDHMqzriYH3ed"
+			]
+		}
+	},
+	"version": 1
+}

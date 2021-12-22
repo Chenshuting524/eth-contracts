@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "Const",
+  "sourceName": "contracts/core/cross_chain_manager/logic/Const.sol",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a723158209577be056db6f41feb81f2c3a745e48eba78dcfaf2c2114c0826f217eb261b8b64736f6c63430005110032",
+  "deployedBytecode": "0x6080604052600080fdfea265627a7a723158209577be056db6f41feb81f2c3a745e48eba78dcfaf2c2114c0826f217eb261b8b64736f6c63430005110032",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

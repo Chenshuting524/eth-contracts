@@ -1,0 +1,278 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint64",
+						"name": "toChainId",
+						"type": "uint64"
+					},
+					{
+						"internalType": "bytes",
+						"name": "targetCallerHash",
+						"type": "bytes"
+					}
+				],
+				"name": "bindCallerHash",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "uint64",
+						"name": "",
+						"type": "uint64"
+					}
+				],
+				"name": "callerHashMap",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint64",
+						"name": "_toChainId",
+						"type": "uint64"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_toContract",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_method",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_txData",
+						"type": "bytes"
+					}
+				],
+				"name": "crossChain",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "initialize",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "isOwner",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "realCCM",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_ccm",
+						"type": "address"
+					}
+				],
+				"name": "setRealCCM",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "args",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "fromContractAddr",
+						"type": "bytes"
+					},
+					{
+						"internalType": "uint64",
+						"name": "fromChainId",
+						"type": "uint64"
+					}
+				],
+				"name": "unwrap",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"eth-contracts/contracts/core/lockProxy/TunnelCCMCaller.sol": "TunnelCCMCaller"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"eth-contracts/contracts/core/lockProxy/TunnelCCMCaller.sol": {
+			"keccak256": "0x2582c5d3e5e9c8071f0814ccf406ec09db4866f1a081a4abf5574978146f66bb",
+			"urls": [
+				"bzz-raw://4076fca740d5b2dbcc189ed3cf0c39a0c009ea227ff18bafcad60b2002034de3",
+				"dweb:/ipfs/QmV3xFBvd6kq8Mzue7LCXhBZ27Jvmvs7VzALk21WWjMdbJ"
+			]
+		},
+		"eth-contracts/contracts/core/lockProxy/interface/IEthCrossChainManager.sol": {
+			"keccak256": "0x59a7e599c211fd1c00aec76965d020cb8438b1b89cdf4c80baa50112d8b6ce9e",
+			"urls": [
+				"bzz-raw://2d78cc653d490d4d897b0a90cb39f81477e4bec714bcc038e306b41e6d81beb6",
+				"dweb:/ipfs/QmVb9Nvp3CnuZfi9SCVDzSD2JZgDtkUPAwDHMqzriYH3ed"
+			]
+		},
+		"eth-contracts/contracts/libs/utils/Utils.sol": {
+			"keccak256": "0xb8ee32919a46700797187040fa677953b07e56565a9eacf3f2adeaa0eea1447e",
+			"urls": [
+				"bzz-raw://b720b3977cf6c5a66d902f077c860d3eaa8c91e46d6ba476cff378d83956585e",
+				"dweb:/ipfs/QmZ3vTmj1C8AXcarX1wVC2YNS1QawYVT3BYofTZiNPPTAy"
+			]
+		}
+	},
+	"version": 1
+}

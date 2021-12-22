@@ -1,0 +1,54 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getEthCrossChainManager",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Interface of the EthCrossChainManagerProxy for business contract like LockProxy to obtain the reliable EthCrossChainManager contract hash.",
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"eth-contracts/contracts/core/lockProxy/interface/IEthCrossChainManagerProxy.sol": "IEthCrossChainManagerProxy"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"eth-contracts/contracts/core/lockProxy/interface/IEthCrossChainManagerProxy.sol": {
+			"keccak256": "0x84e51809fb6f2a12d19fd05dc98ae5aae9af9019f88bbc55cd507236a412437b",
+			"urls": [
+				"bzz-raw://d7d75106e5fabfb0deaf27b8cc2c9cb8e58f7f7178fe4755180fad7f683c93fe",
+				"dweb:/ipfs/QmTFqMjfUBXbg6niPWkQtF7MVYVzqTe8eQd82hnKwu9Noi"
+			]
+		}
+	},
+	"version": 1
+}

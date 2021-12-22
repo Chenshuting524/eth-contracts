@@ -1,0 +1,279 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "proxy",
+						"type": "address"
+					}
+				],
+				"name": "ProxyCreated",
+				"type": "event"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_salt",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_logic",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_admin",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_data",
+						"type": "bytes"
+					}
+				],
+				"name": "deploy",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "proxy",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_salt",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_logic",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_admin",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_data",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_signature",
+						"type": "bytes"
+					}
+				],
+				"name": "deploySigned",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "proxy",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_salt",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_sender",
+						"type": "address"
+					}
+				],
+				"name": "getDeploymentAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_salt",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_logic",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_admin",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_data",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_signature",
+						"type": "bytes"
+					}
+				],
+				"name": "getSigner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_addr",
+						"type": "address"
+					}
+				],
+				"name": "isChild",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"eth-contracts/contracts/core/cross_chain_manager/caller/CallerFactory.sol": "CallerFactory"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"eth-contracts/contracts/core/cross_chain_manager/caller/CallerFactory.sol": {
+			"keccak256": "0x748a950f4f190eba1a7387edb9d7a4bfdac070e965d52aa1c6d051c97e19e450",
+			"urls": [
+				"bzz-raw://17af1bbb22bffe636e7cabbbb00d62978e782c6687214ac7a5ee5ca81aa20678",
+				"dweb:/ipfs/QmWpQSYtf18yf52rYPETQCPnZbijiMi63s1frwBAS5uXj5"
+			]
+		},
+		"eth-contracts/contracts/core/cross_chain_manager/libs/cryptography/ECDSA.sol": {
+			"keccak256": "0xe5b43cbfa5ea3c8f059f78c1b94a676fc18cbc443fa0fe1e16b2a4cefe793996",
+			"urls": [
+				"bzz-raw://321ff162eb604776880c57ec644f49e3bf2bf5af81c7a235024ae62473b2eb4f",
+				"dweb:/ipfs/QmSB94Puh2jmAqX6dZu83AMDN8S62PsBKLjvBrqHovpzfi"
+			]
+		},
+		"eth-contracts/contracts/core/cross_chain_manager/libs/upgradeability/BaseAdminUpgradeabilityProxy.sol": {
+			"keccak256": "0x9386036387e76629334d03698eb40b3d28adb6b6da9cfcc72f6482976561f5fa",
+			"urls": [
+				"bzz-raw://1902ad79e07c345d0b37ee844def86016580429a8d44ed206d82b192f2979468",
+				"dweb:/ipfs/QmX7pFH2jy5E4nykkUgHrdvSLPsqND6ayMXdRnJuJ257zd"
+			]
+		},
+		"eth-contracts/contracts/core/cross_chain_manager/libs/upgradeability/BaseUpgradeabilityProxy.sol": {
+			"keccak256": "0xfec119f99997dd5d77b335d45aff284d2712687e0912ef5e243b01dc39e81557",
+			"urls": [
+				"bzz-raw://51ff837b678d5b29ab9aa79c39fb9a79c5fdc3f4d7aa6ac37167b3bcfdb9744f",
+				"dweb:/ipfs/QmSHYfTBjFEsWKnjKQH76qqbuv2pec56fDxwYyTJUArEPr"
+			]
+		},
+		"eth-contracts/contracts/core/cross_chain_manager/libs/upgradeability/InitializableAdminUpgradeabilityProxy.sol": {
+			"keccak256": "0x413f0608634097fc2af90b04df7abf16edc4417d056619fed547bfd37d214cd7",
+			"urls": [
+				"bzz-raw://ddd6bb388291d543cb9237faa3fef0cff035e8939b04356e47241f6e6044953f",
+				"dweb:/ipfs/Qmeis5BK9uuRwJf5hFKYvN8GDpWA4WazxmL29sk7aChML3"
+			]
+		},
+		"eth-contracts/contracts/core/cross_chain_manager/libs/upgradeability/InitializableUpgradeabilityProxy.sol": {
+			"keccak256": "0xef7e4acb7c3f1aa06aef9c1734a2ad2a8d6e8417aacc583f50ecb279f396c2a5",
+			"urls": [
+				"bzz-raw://08135487d89812a37fdd7fd36eba16039408b1a53e970f084165e2cf9f184eb6",
+				"dweb:/ipfs/QmaboprBGQB7BigS3DkUtpby71m66qPabjVKHhJNDa8i9p"
+			]
+		},
+		"eth-contracts/contracts/core/cross_chain_manager/libs/upgradeability/Proxy.sol": {
+			"keccak256": "0x26efbdd738c25421b9578b6539173c16ac16637e2516b81e1d86f689ce1ffa1d",
+			"urls": [
+				"bzz-raw://5aaf94ffdd8a3be4c33aa0a27a54171a22830fb0aae0057b89e6462210d9952f",
+				"dweb:/ipfs/QmXtfDGYTdGG5uGAw8TUag3H8LZJ4QVQJ4KtwqoDieRZee"
+			]
+		},
+		"eth-contracts/contracts/core/cross_chain_manager/libs/upgradeability/ProxyFactory.sol": {
+			"keccak256": "0x44fa69d92b8b10f08f92ffe345ae4e11374515cc69aa2ec04729f2837cbe7a75",
+			"urls": [
+				"bzz-raw://3393162bc8ad99346be49ae3ed10a56b0d0b9bc99334961deb23f22d0951d152",
+				"dweb:/ipfs/QmdXLgYjz5mYDmFtfr7TQXEHQBmELJXbYzrpY2FRBimrTa"
+			]
+		},
+		"eth-contracts/contracts/core/cross_chain_manager/libs/upgradeability/UpgradeabilityProxy.sol": {
+			"keccak256": "0x8facd1bc9770d9c4e879f12afe3619e53914d3f9eb6fd3883e0078fd3cdce899",
+			"urls": [
+				"bzz-raw://e1ef1ad0cfc76a56b1ee07a6d92d7339232008696ce89161acb273ca0a868ffa",
+				"dweb:/ipfs/QmXsjYfrhFQKKrUnproxUgyxto8YZWtApwH79FQRcqBhL3"
+			]
+		},
+		"eth-contracts/contracts/core/cross_chain_manager/libs/utils/Address.sol": {
+			"keccak256": "0xf1342cab1be5df2f6b8ac867bc3f8e098cee5c2e7eb5b3b2bdd2df0ae294aeb4",
+			"urls": [
+				"bzz-raw://172fd3717333e938fc99d8ef15549d6cdd5c402088f8057de8f31566ece98cf7",
+				"dweb:/ipfs/QmbV9dMRfd6aJ7hXsDeSVuFmphcPssfnqMJi6QLUoRCofK"
+			]
+		}
+	},
+	"version": 1
+}

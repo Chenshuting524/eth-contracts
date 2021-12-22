@@ -1,0 +1,87 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_tunnelCCM",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getEthCrossChainManager",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "tunnelCCM",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"eth-contracts/contracts/core/lockProxy/CCMPMock.sol": "CCMPMock"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"eth-contracts/contracts/core/lockProxy/CCMPMock.sol": {
+			"keccak256": "0x1192695a26924ddb36b7350af922536361041cb2ccdba17a331973c922cb6864",
+			"urls": [
+				"bzz-raw://8abda87c2a0bd87097e2c176da8ba2938f651a8eecf44401a73503eb51d3df70",
+				"dweb:/ipfs/QmWZV4Q2jsFFmrSobYNeMrCUJMqkG9jY1m9LY8qvjDdDQw"
+			]
+		},
+		"eth-contracts/contracts/core/lockProxy/interface/IEthCrossChainManagerProxy.sol": {
+			"keccak256": "0x84e51809fb6f2a12d19fd05dc98ae5aae9af9019f88bbc55cd507236a412437b",
+			"urls": [
+				"bzz-raw://d7d75106e5fabfb0deaf27b8cc2c9cb8e58f7f7178fe4755180fad7f683c93fe",
+				"dweb:/ipfs/QmTFqMjfUBXbg6niPWkQtF7MVYVzqTe8eQd82hnKwu9Noi"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,402 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"görli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"checkIfFromChainTxExist(uint64,bytes32)": "0586763c",
+			"getCurEpochId()": "f881afd2",
+			"getCurEpochStartHeight()": "5ac40790",
+			"getCurEpochValidatorPkBytes()": "cd62908f",
+			"getEthTxHash(uint256)": "29927875",
+			"getEthTxHashIndex()": "ff3d24a1",
+			"getExtraData(bytes32,bytes32)": "40602bb5",
+			"markFromChainTxExist(uint64,bytes32)": "e90bfdcf",
+			"pause()": "8456cb59",
+			"paused()": "5c975abb",
+			"putCurEpochId(uint64)": "738b5ae4",
+			"putCurEpochStartHeight(uint64)": "512feecc",
+			"putCurEpochValidatorPkBytes(bytes)": "1dc544bf",
+			"putEthTxHash(bytes32)": "4c3ccf64",
+			"putExtraData(bytes32,bytes32,bytes)": "1afe374e",
+			"transferOwnership(address)": "f2fde38b",
+			"unpause()": "3f4ba83a"
+		}
+	},
+	"abi": [
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "uint64",
+					"name": "fromChainId",
+					"type": "uint64"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "fromChainTx",
+					"type": "bytes32"
+				}
+			],
+			"name": "checkIfFromChainTxExist",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [],
+			"name": "getCurEpochId",
+			"outputs": [
+				{
+					"internalType": "uint64",
+					"name": "",
+					"type": "uint64"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [],
+			"name": "getCurEpochStartHeight",
+			"outputs": [
+				{
+					"internalType": "uint64",
+					"name": "",
+					"type": "uint64"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [],
+			"name": "getCurEpochValidatorPkBytes",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "",
+					"type": "bytes"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "ethTxHashIndex",
+					"type": "uint256"
+				}
+			],
+			"name": "getEthTxHash",
+			"outputs": [
+				{
+					"internalType": "bytes32",
+					"name": "",
+					"type": "bytes32"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [],
+			"name": "getEthTxHashIndex",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "key1",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "key2",
+					"type": "bytes32"
+				}
+			],
+			"name": "getExtraData",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "",
+					"type": "bytes"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "uint64",
+					"name": "fromChainId",
+					"type": "uint64"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "fromChainTx",
+					"type": "bytes32"
+				}
+			],
+			"name": "markFromChainTxExist",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [],
+			"name": "pause",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [],
+			"name": "paused",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "uint64",
+					"name": "epochId",
+					"type": "uint64"
+				}
+			],
+			"name": "putCurEpochId",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "uint64",
+					"name": "startHeight",
+					"type": "uint64"
+				}
+			],
+			"name": "putCurEpochStartHeight",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "bytes",
+					"name": "curEpochPkBytes",
+					"type": "bytes"
+				}
+			],
+			"name": "putCurEpochValidatorPkBytes",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "ethTxHash",
+					"type": "bytes32"
+				}
+			],
+			"name": "putEthTxHash",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "key1",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "key2",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes",
+					"name": "value",
+					"type": "bytes"
+				}
+			],
+			"name": "putExtraData",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "newOwner",
+					"type": "address"
+				}
+			],
+			"name": "transferOwnership",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [],
+			"name": "unpause",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		}
+	]
+}

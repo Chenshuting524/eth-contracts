@@ -1,0 +1,104 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_logic",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_data",
+						"type": "bytes"
+					}
+				],
+				"payable": true,
+				"stateMutability": "payable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "implementation",
+						"type": "address"
+					}
+				],
+				"name": "Upgraded",
+				"type": "event"
+			},
+			{
+				"payable": true,
+				"stateMutability": "payable",
+				"type": "fallback"
+			}
+		],
+		"devdoc": {
+			"details": "Extends BaseUpgradeabilityProxy with a constructor for initializing implementation and init data.",
+			"methods": {
+				"constructor": {
+					"details": "Contract constructor.",
+					"params": {
+						"_data": "Data to send as msg.data to the implementation to initialize the proxied contract. It should include the signature and the parameters of the function to be called, as described in https://solidity.readthedocs.io/en/v0.4.24/abi-spec.html#function-selector-and-argument-encoding. This parameter is optional, if no data is given the initialization call to proxied contract will be skipped.",
+						"_logic": "Address of the initial implementation."
+					}
+				}
+			},
+			"title": "UpgradeabilityProxy"
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"eth-contracts/contracts/core/cross_chain_manager/libs/upgradeability/UpgradeabilityProxy.sol": "UpgradeabilityProxy"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"eth-contracts/contracts/core/cross_chain_manager/libs/upgradeability/BaseUpgradeabilityProxy.sol": {
+			"keccak256": "0xfec119f99997dd5d77b335d45aff284d2712687e0912ef5e243b01dc39e81557",
+			"urls": [
+				"bzz-raw://51ff837b678d5b29ab9aa79c39fb9a79c5fdc3f4d7aa6ac37167b3bcfdb9744f",
+				"dweb:/ipfs/QmSHYfTBjFEsWKnjKQH76qqbuv2pec56fDxwYyTJUArEPr"
+			]
+		},
+		"eth-contracts/contracts/core/cross_chain_manager/libs/upgradeability/Proxy.sol": {
+			"keccak256": "0x26efbdd738c25421b9578b6539173c16ac16637e2516b81e1d86f689ce1ffa1d",
+			"urls": [
+				"bzz-raw://5aaf94ffdd8a3be4c33aa0a27a54171a22830fb0aae0057b89e6462210d9952f",
+				"dweb:/ipfs/QmXtfDGYTdGG5uGAw8TUag3H8LZJ4QVQJ4KtwqoDieRZee"
+			]
+		},
+		"eth-contracts/contracts/core/cross_chain_manager/libs/upgradeability/UpgradeabilityProxy.sol": {
+			"keccak256": "0x8facd1bc9770d9c4e879f12afe3619e53914d3f9eb6fd3883e0078fd3cdce899",
+			"urls": [
+				"bzz-raw://e1ef1ad0cfc76a56b1ee07a6d92d7339232008696ce89161acb273ca0a868ffa",
+				"dweb:/ipfs/QmXsjYfrhFQKKrUnproxUgyxto8YZWtApwH79FQRcqBhL3"
+			]
+		},
+		"eth-contracts/contracts/core/cross_chain_manager/libs/utils/Address.sol": {
+			"keccak256": "0xf1342cab1be5df2f6b8ac867bc3f8e098cee5c2e7eb5b3b2bdd2df0ae294aeb4",
+			"urls": [
+				"bzz-raw://172fd3717333e938fc99d8ef15549d6cdd5c402088f8057de8f31566ece98cf7",
+				"dweb:/ipfs/QmbV9dMRfd6aJ7hXsDeSVuFmphcPssfnqMJi6QLUoRCofK"
+			]
+		}
+	},
+	"version": 1
+}

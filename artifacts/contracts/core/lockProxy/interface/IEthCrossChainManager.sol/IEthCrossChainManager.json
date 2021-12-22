@@ -1,0 +1,47 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IEthCrossChainManager",
+  "sourceName": "contracts/core/lockProxy/interface/IEthCrossChainManager.sol",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint64",
+          "name": "_toChainId",
+          "type": "uint64"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_toContract",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_method",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_txData",
+          "type": "bytes"
+        }
+      ],
+      "name": "crossChain",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

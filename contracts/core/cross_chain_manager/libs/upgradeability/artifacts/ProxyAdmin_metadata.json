@@ -1,0 +1,319 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "contract AdminUpgradeabilityProxy",
+						"name": "proxy",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "newAdmin",
+						"type": "address"
+					}
+				],
+				"name": "changeProxyAdmin",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "contract AdminUpgradeabilityProxy",
+						"name": "proxy",
+						"type": "address"
+					}
+				],
+				"name": "getProxyAdmin",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "contract AdminUpgradeabilityProxy",
+						"name": "proxy",
+						"type": "address"
+					}
+				],
+				"name": "getProxyImplementation",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "isOwner",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "contract AdminUpgradeabilityProxy",
+						"name": "proxy",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "implementation",
+						"type": "address"
+					}
+				],
+				"name": "upgrade",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "contract AdminUpgradeabilityProxy",
+						"name": "proxy",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "implementation",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "upgradeAndCall",
+				"outputs": [],
+				"payable": true,
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "This contract is the admin of a proxy, and is in charge of upgrading it as well as transferring it to another admin.",
+			"methods": {
+				"changeProxyAdmin(address,address)": {
+					"details": "Changes the admin of a proxy.",
+					"params": {
+						"newAdmin": "Address to transfer proxy administration to.",
+						"proxy": "Proxy to change admin."
+					}
+				},
+				"getProxyAdmin(address)": {
+					"details": "Returns the admin of a proxy. Only the admin can query it.",
+					"return": "The address of the current admin of the proxy."
+				},
+				"getProxyImplementation(address)": {
+					"details": "Returns the current implementation of a proxy. This is needed because only the proxy admin can query it.",
+					"return": "The address of the current implementation of the proxy."
+				},
+				"isOwner()": {
+					"return": "true if `msg.sender` is the owner of the contract."
+				},
+				"owner()": {
+					"return": "the address of the owner."
+				},
+				"renounceOwnership()": {
+					"details": "Allows the current owner to relinquish control of the contract."
+				},
+				"transferOwnership(address)": {
+					"details": "Allows the current owner to transfer control of the contract to a newOwner.",
+					"params": {
+						"newOwner": "The address to transfer ownership to."
+					}
+				},
+				"upgrade(address,address)": {
+					"details": "Upgrades a proxy to the newest implementation of a contract.",
+					"params": {
+						"implementation": "the address of the Implementation.",
+						"proxy": "Proxy to be upgraded."
+					}
+				},
+				"upgradeAndCall(address,address,bytes)": {
+					"details": "Upgrades a proxy to the newest implementation of a contract and forwards a function call to it. This is useful to initialize the proxied contract.",
+					"params": {
+						"data": "Data to send as msg.data in the low level call. It should include the signature and the parameters of the function to be called, as described in https://solidity.readthedocs.io/en/v0.4.24/abi-spec.html#function-selector-and-argument-encoding.",
+						"implementation": "Address of the Implementation.",
+						"proxy": "Proxy to be upgraded."
+					}
+				}
+			},
+			"title": "ProxyAdmin"
+		},
+		"userdoc": {
+			"methods": {
+				"renounceOwnership()": {
+					"notice": "Renouncing to ownership will leave the contract without an owner. It will not be possible to call the functions with the `onlyOwner` modifier anymore."
+				}
+			}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"eth-contracts/contracts/core/cross_chain_manager/libs/upgradeability/ProxyAdmin.sol": "ProxyAdmin"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"eth-contracts/contracts/core/cross_chain_manager/libs/ownership/Ownable.sol": {
+			"keccak256": "0xb69c9f66b4d0fec9e3c9941af9c9ffca7205aa212e359584db5d06f164035cb5",
+			"urls": [
+				"bzz-raw://97af268f1ba3c31fcfc1846eb7f4fb3cf49dc20e598b0f2a1a3ce1269ece480d",
+				"dweb:/ipfs/QmPe1tjbJcRnCH4EBfRcPgtvacNtDEcFNZZFuVgvEdn1EG"
+			]
+		},
+		"eth-contracts/contracts/core/cross_chain_manager/libs/upgradeability/AdminUpgradeabilityProxy.sol": {
+			"keccak256": "0x90bb546afa23f8f717b719dc81789fbecdab0b4e4cdbd927f8bc99402be3f5d9",
+			"urls": [
+				"bzz-raw://8ff7b523901449669d0d24ea4fbc15caa26f6253368b9088d9ccbf194a901f17",
+				"dweb:/ipfs/QmU9zoewq2hwAEmUfgikjbi48Pm8fbRRdZdnhKFgbXmALj"
+			]
+		},
+		"eth-contracts/contracts/core/cross_chain_manager/libs/upgradeability/BaseAdminUpgradeabilityProxy.sol": {
+			"keccak256": "0x9386036387e76629334d03698eb40b3d28adb6b6da9cfcc72f6482976561f5fa",
+			"urls": [
+				"bzz-raw://1902ad79e07c345d0b37ee844def86016580429a8d44ed206d82b192f2979468",
+				"dweb:/ipfs/QmX7pFH2jy5E4nykkUgHrdvSLPsqND6ayMXdRnJuJ257zd"
+			]
+		},
+		"eth-contracts/contracts/core/cross_chain_manager/libs/upgradeability/BaseUpgradeabilityProxy.sol": {
+			"keccak256": "0xfec119f99997dd5d77b335d45aff284d2712687e0912ef5e243b01dc39e81557",
+			"urls": [
+				"bzz-raw://51ff837b678d5b29ab9aa79c39fb9a79c5fdc3f4d7aa6ac37167b3bcfdb9744f",
+				"dweb:/ipfs/QmSHYfTBjFEsWKnjKQH76qqbuv2pec56fDxwYyTJUArEPr"
+			]
+		},
+		"eth-contracts/contracts/core/cross_chain_manager/libs/upgradeability/Proxy.sol": {
+			"keccak256": "0x26efbdd738c25421b9578b6539173c16ac16637e2516b81e1d86f689ce1ffa1d",
+			"urls": [
+				"bzz-raw://5aaf94ffdd8a3be4c33aa0a27a54171a22830fb0aae0057b89e6462210d9952f",
+				"dweb:/ipfs/QmXtfDGYTdGG5uGAw8TUag3H8LZJ4QVQJ4KtwqoDieRZee"
+			]
+		},
+		"eth-contracts/contracts/core/cross_chain_manager/libs/upgradeability/ProxyAdmin.sol": {
+			"keccak256": "0xf5f2f3cb4ec68db1949259db93492537aa1ff98f2b838e17ed14938cb745b24c",
+			"urls": [
+				"bzz-raw://9e9efcebf70edd1c67efec38c77de49fb8d979aebbb69b2582814e85bcc5dc22",
+				"dweb:/ipfs/QmZyw7YyuofrAM3ar7E9KCxr67cyJWXEKf7njxMUFsnvuY"
+			]
+		},
+		"eth-contracts/contracts/core/cross_chain_manager/libs/upgradeability/UpgradeabilityProxy.sol": {
+			"keccak256": "0x8facd1bc9770d9c4e879f12afe3619e53914d3f9eb6fd3883e0078fd3cdce899",
+			"urls": [
+				"bzz-raw://e1ef1ad0cfc76a56b1ee07a6d92d7339232008696ce89161acb273ca0a868ffa",
+				"dweb:/ipfs/QmXsjYfrhFQKKrUnproxUgyxto8YZWtApwH79FQRcqBhL3"
+			]
+		},
+		"eth-contracts/contracts/core/cross_chain_manager/libs/utils/Address.sol": {
+			"keccak256": "0xf1342cab1be5df2f6b8ac867bc3f8e098cee5c2e7eb5b3b2bdd2df0ae294aeb4",
+			"urls": [
+				"bzz-raw://172fd3717333e938fc99d8ef15549d6cdd5c402088f8057de8f31566ece98cf7",
+				"dweb:/ipfs/QmbV9dMRfd6aJ7hXsDeSVuFmphcPssfnqMJi6QLUoRCofK"
+			]
+		}
+	},
+	"version": 1
+}

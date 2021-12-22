@@ -1,0 +1,16 @@
+pragma solidity ^0.5.0;
+
+
+import "./interface/IEthCrossChainManager.sol";
+
+contract CrossTest {
+    event LockEvent()
+    mapping()
+    function originlock(string title,string contant,) return{
+        
+        require(eccm.crossChain(toChainId, toProxyHash, "unlock", txData), "EthCrossChainManager crossChain executed error!");
+
+    }
+
+}
+

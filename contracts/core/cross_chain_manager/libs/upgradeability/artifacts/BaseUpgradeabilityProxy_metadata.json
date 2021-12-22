@@ -1,0 +1,72 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "implementation",
+						"type": "address"
+					}
+				],
+				"name": "Upgraded",
+				"type": "event"
+			},
+			{
+				"payable": true,
+				"stateMutability": "payable",
+				"type": "fallback"
+			}
+		],
+		"devdoc": {
+			"details": "This contract implements a proxy that allows to change the implementation address to which it will delegate. Such a change is called an implementation upgrade.",
+			"methods": {},
+			"title": "BaseUpgradeabilityProxy"
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"eth-contracts/contracts/core/cross_chain_manager/libs/upgradeability/BaseUpgradeabilityProxy.sol": "BaseUpgradeabilityProxy"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"eth-contracts/contracts/core/cross_chain_manager/libs/upgradeability/BaseUpgradeabilityProxy.sol": {
+			"keccak256": "0xfec119f99997dd5d77b335d45aff284d2712687e0912ef5e243b01dc39e81557",
+			"urls": [
+				"bzz-raw://51ff837b678d5b29ab9aa79c39fb9a79c5fdc3f4d7aa6ac37167b3bcfdb9744f",
+				"dweb:/ipfs/QmSHYfTBjFEsWKnjKQH76qqbuv2pec56fDxwYyTJUArEPr"
+			]
+		},
+		"eth-contracts/contracts/core/cross_chain_manager/libs/upgradeability/Proxy.sol": {
+			"keccak256": "0x26efbdd738c25421b9578b6539173c16ac16637e2516b81e1d86f689ce1ffa1d",
+			"urls": [
+				"bzz-raw://5aaf94ffdd8a3be4c33aa0a27a54171a22830fb0aae0057b89e6462210d9952f",
+				"dweb:/ipfs/QmXtfDGYTdGG5uGAw8TUag3H8LZJ4QVQJ4KtwqoDieRZee"
+			]
+		},
+		"eth-contracts/contracts/core/cross_chain_manager/libs/utils/Address.sol": {
+			"keccak256": "0xf1342cab1be5df2f6b8ac867bc3f8e098cee5c2e7eb5b3b2bdd2df0ae294aeb4",
+			"urls": [
+				"bzz-raw://172fd3717333e938fc99d8ef15549d6cdd5c402088f8057de8f31566ece98cf7",
+				"dweb:/ipfs/QmbV9dMRfd6aJ7hXsDeSVuFmphcPssfnqMJi6QLUoRCofK"
+			]
+		}
+	},
+	"version": 1
+}

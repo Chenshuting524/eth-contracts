@@ -1,0 +1,954 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "fromAssetHash",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint64",
+						"name": "toChainId",
+						"type": "uint64"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "targetProxyHash",
+						"type": "bytes"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "initialAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "BindAssetEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "originAssetAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "LPTokenAddress",
+						"type": "address"
+					}
+				],
+				"name": "BindLPToAssetEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint64",
+						"name": "toChainId",
+						"type": "uint64"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "targetProxyHash",
+						"type": "bytes"
+					}
+				],
+				"name": "BindProxyEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "fromAssetHash",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "fromAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint64",
+						"name": "toChainId",
+						"type": "uint64"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "toAssetHash",
+						"type": "bytes"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "toAddress",
+						"type": "bytes"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "LockEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "manager",
+						"type": "address"
+					}
+				],
+				"name": "SetManagerProxyEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "toAssetHash",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "toAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "UnlockEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "toAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "fromAssetHash",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "fromLPHash",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "depositEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "toAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "fromAssetHash",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "fromLPHash",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdrawEvent",
+				"type": "event"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint64",
+						"name": "",
+						"type": "uint64"
+					}
+				],
+				"name": "assetHashMap",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "assetLPMap",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "fromAssetHash",
+						"type": "address"
+					},
+					{
+						"internalType": "uint64",
+						"name": "toChainId",
+						"type": "uint64"
+					},
+					{
+						"internalType": "bytes",
+						"name": "toAssetHash",
+						"type": "bytes"
+					}
+				],
+				"name": "bindAssetHash",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "fromAssetHash",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint64[]",
+						"name": "toChainId",
+						"type": "uint64[]"
+					},
+					{
+						"internalType": "bytes[]",
+						"name": "toAssetHash",
+						"type": "bytes[]"
+					}
+				],
+				"name": "bindAssetHashBatch",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "fromAssetHash",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "fromLPHash",
+						"type": "address"
+					},
+					{
+						"internalType": "uint64",
+						"name": "toChainId",
+						"type": "uint64"
+					},
+					{
+						"internalType": "bytes",
+						"name": "toAssetHash",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "toLPHash",
+						"type": "bytes"
+					}
+				],
+				"name": "bindLPAndAsset",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "fromAssetHash",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "fromLPHash",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint64[]",
+						"name": "toChainId",
+						"type": "uint64[]"
+					},
+					{
+						"internalType": "bytes[]",
+						"name": "toAssetHash",
+						"type": "bytes[]"
+					},
+					{
+						"internalType": "bytes[]",
+						"name": "toLPHash",
+						"type": "bytes[]"
+					}
+				],
+				"name": "bindLPAndAssetBatch",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "originAssetAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "LPTokenAddress",
+						"type": "address"
+					}
+				],
+				"name": "bindLPToAsset",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "originAssetAddress",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "LPTokenAddress",
+						"type": "address[]"
+					}
+				],
+				"name": "bindLPToAssetBatch",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint64",
+						"name": "toChainId",
+						"type": "uint64"
+					},
+					{
+						"internalType": "bytes",
+						"name": "targetProxyHash",
+						"type": "bytes"
+					}
+				],
+				"name": "bindProxyHash",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint64[]",
+						"name": "toChainId",
+						"type": "uint64[]"
+					},
+					{
+						"internalType": "bytes[]",
+						"name": "targetProxyHash",
+						"type": "bytes[]"
+					}
+				],
+				"name": "bindProxyHashBatch",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "originAssetAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "deposit",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "originAssetAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "toAddress",
+						"type": "address"
+					}
+				],
+				"name": "deposit",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "fromAssetHash",
+						"type": "address"
+					}
+				],
+				"name": "getBalanceFor",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "isOwner",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "fromAssetHash",
+						"type": "address"
+					},
+					{
+						"internalType": "uint64",
+						"name": "toChainId",
+						"type": "uint64"
+					},
+					{
+						"internalType": "bytes",
+						"name": "toAddress",
+						"type": "bytes"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "lock",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": true,
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "managerProxyContract",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "uint64",
+						"name": "",
+						"type": "uint64"
+					}
+				],
+				"name": "proxyHashMap",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "ethCCMProxyAddr",
+						"type": "address"
+					}
+				],
+				"name": "setManagerProxy",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "argsBs",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "fromContractAddr",
+						"type": "bytes"
+					},
+					{
+						"internalType": "uint64",
+						"name": "fromChainId",
+						"type": "uint64"
+					}
+				],
+				"name": "unlock",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "targetTokenAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "toAddress",
+						"type": "address"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "targetTokenAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {
+				"isOwner()": {
+					"details": "Returns true if the caller is the current owner."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner.      * NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"eth-contracts/contracts/core/lockProxy/LockProxyWithLP.sol": "LockProxyWithLP"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"eth-contracts/contracts/core/lockProxy/LockProxyWithLP.sol": {
+			"keccak256": "0xf260a4a421adc17bc00d8d16619b0d45e8f4bf426f230db0f4967cdb7ed6e9a8",
+			"urls": [
+				"bzz-raw://b4a9b88dd1c9adf0362cb36e0a21d3e83fd86b37c7ea5bcefb3678c10d01901e",
+				"dweb:/ipfs/QmXr4w6TdPV2wRRaoJxYbGjY9G5egLJuVysexzFJYqmwJi"
+			]
+		},
+		"eth-contracts/contracts/core/lockProxy/interface/IEthCrossChainManager.sol": {
+			"keccak256": "0x59a7e599c211fd1c00aec76965d020cb8438b1b89cdf4c80baa50112d8b6ce9e",
+			"urls": [
+				"bzz-raw://2d78cc653d490d4d897b0a90cb39f81477e4bec714bcc038e306b41e6d81beb6",
+				"dweb:/ipfs/QmVb9Nvp3CnuZfi9SCVDzSD2JZgDtkUPAwDHMqzriYH3ed"
+			]
+		},
+		"eth-contracts/contracts/core/lockProxy/interface/IEthCrossChainManagerProxy.sol": {
+			"keccak256": "0x84e51809fb6f2a12d19fd05dc98ae5aae9af9019f88bbc55cd507236a412437b",
+			"urls": [
+				"bzz-raw://d7d75106e5fabfb0deaf27b8cc2c9cb8e58f7f7178fe4755180fad7f683c93fe",
+				"dweb:/ipfs/QmTFqMjfUBXbg6niPWkQtF7MVYVzqTe8eQd82hnKwu9Noi"
+			]
+		},
+		"eth-contracts/contracts/libs/GSN/Context.sol": {
+			"keccak256": "0x036b5dafc5b62f57a4eb3fcada1e58dc04cb4abf3c874e40227fb3589d208b16",
+			"urls": [
+				"bzz-raw://8064d0894f167d294d366ecb64b3e473a112df9da8d2dfb4b6629d47654c8ffc",
+				"dweb:/ipfs/QmaMu56NkkrRnQDpj7GKRTYCfkSGBe2Nmp4GmagWiSbVMB"
+			]
+		},
+		"eth-contracts/contracts/libs/common/ZeroCopySink.sol": {
+			"keccak256": "0x53ca8f0960478db4d7cdcdf430ec324432d8b578ee04f3fee3cd192a001785c2",
+			"urls": [
+				"bzz-raw://1d3d03f3a743ff5fc468a4f24d202a6239eefec312631d15e1a03ca9c92a25c0",
+				"dweb:/ipfs/QmXYDmc1miMVmeirZr2cW6ArrHaEAUNUwsctFbrRCNpSBk"
+			]
+		},
+		"eth-contracts/contracts/libs/common/ZeroCopySource.sol": {
+			"keccak256": "0x555024b0d89766a1fa1c1499bee0b274f60f07520173553166c2fa3cdf39eca0",
+			"urls": [
+				"bzz-raw://cc602402a61af2d3ff8dc4d879d5a008eb9b16c2008fde3ed6be583714b3d6c5",
+				"dweb:/ipfs/Qmast65gXfpHfR2sfHXYPmmyut1dDVJ5BcTrB7DyqJorRc"
+			]
+		},
+		"eth-contracts/contracts/libs/math/SafeMath.sol": {
+			"keccak256": "0x691deb6c30b55ad1af193527a267481ff51bdeb926ca5993cf36f1a32cb8c7c7",
+			"urls": [
+				"bzz-raw://08689dd2cae2a22dd640a1b285b697bf068ce27032e272db13e89ddecb578445",
+				"dweb:/ipfs/QmazcEpG7FvSsPdUB2bisZS4SgHcNuTHg8j2DpNCj5cdy3"
+			]
+		},
+		"eth-contracts/contracts/libs/ownership/Ownable.sol": {
+			"keccak256": "0x22e7582f3f02e2d6d44eedf5a047e7f9d913f3d62aed6d524b8213684cfd87e5",
+			"urls": [
+				"bzz-raw://9eb4da21c4de925bb310e39b8a2e1e14659abe08d9fcbc2b3fe8932298c6acfd",
+				"dweb:/ipfs/QmQFTnQ52XZDrZ8LSqyC4paTTQgNNWD79uc3T4LjeBB53d"
+			]
+		},
+		"eth-contracts/contracts/libs/token/ERC20/IERC20.sol": {
+			"keccak256": "0xd45135fede71fe4b2f06ccc22c459f880912785065a13f5ebf85ebe3d07d632e",
+			"urls": [
+				"bzz-raw://e38e11ed61a168499a2128f65c4248f9cb76a12fb0c9f2ae0e0e0ade46c5ba9f",
+				"dweb:/ipfs/QmdAEvzLRsCtT6Yp1ruyymfaQ4hDtQMmBFjYY9MB4YQSBm"
+			]
+		},
+		"eth-contracts/contracts/libs/token/ERC20/SafeERC20.sol": {
+			"keccak256": "0x87cd701f83e9a417f05e9fd8431a84237468b9d1e87ef9ceee31d0a1b362cc34",
+			"urls": [
+				"bzz-raw://e28b121b8a5af3928cb458c5ad5635c4b9420fa3f08c60434fae8be054218db1",
+				"dweb:/ipfs/QmYjDzXYfVLjqwZNeAv8ENimXnAqFN3tTqThD65viVnji5"
+			]
+		},
+		"eth-contracts/contracts/libs/utils/Utils.sol": {
+			"keccak256": "0xb8ee32919a46700797187040fa677953b07e56565a9eacf3f2adeaa0eea1447e",
+			"urls": [
+				"bzz-raw://b720b3977cf6c5a66d902f077c860d3eaa8c91e46d6ba476cff378d83956585e",
+				"dweb:/ipfs/QmZ3vTmj1C8AXcarX1wVC2YNS1QawYVT3BYofTZiNPPTAy"
+			]
+		}
+	},
+	"version": 1
+}

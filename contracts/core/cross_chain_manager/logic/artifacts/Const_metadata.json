@@ -1,0 +1,37 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"eth-contracts/contracts/core/cross_chain_manager/logic/Const.sol": "Const"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"eth-contracts/contracts/core/cross_chain_manager/logic/Const.sol": {
+			"keccak256": "0x33925b42ce6b784bbace500e4ea63a9a444a3f2dc3f38584f85064300756fbdf",
+			"urls": [
+				"bzz-raw://bfc5e16b410c318d6627eecae7b948ce37702e5e1746762045faadb6eb4513c8",
+				"dweb:/ipfs/QmSyYsrrgKg8H5i2JsCQ17HJfkDnWDd4fh8rzorzMhDyFe"
+			]
+		}
+	},
+	"version": 1
+}

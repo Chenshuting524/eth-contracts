@@ -1,0 +1,26 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "CallerImplemetationMock_2",
+  "sourceName": "contracts/mocks/caller/callerMock.sol",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "whoAmI",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b5060878061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063da91254c14602d575b600080fd5b60336049565b6040518082815260200191505060405180910390f35b6000600290509056fea265627a7a7231582080eeecb28274be1b3e1e871b415b6ac9ead796d70960dafb3b31ec1942a75bee64736f6c63430005110032",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063da91254c14602d575b600080fd5b60336049565b6040518082815260200191505060405180910390f35b6000600290509056fea265627a7a7231582080eeecb28274be1b3e1e871b415b6ac9ead796d70960dafb3b31ec1942a75bee64736f6c63430005110032",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
