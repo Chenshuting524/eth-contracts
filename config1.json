@@ -83,6 +83,13 @@
 			"EthCrossChainData": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
 			"EthCrossChainManager": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
 			"EthCrossChainManagerProxy": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9"
+		},
+		{
+			"Name": "ontology-test",
+			"ChainID": 103,
+			"EthCrossChainData": "0x34d4a23A1FC0C694f0D74DDAf9D8d564cfE2D430",
+			"EthCrossChainManager": "0xBFC0457548BB90D54123a71a7310BaDa8f4662c0",
+			"EthCrossChainManagerProxy": "0x1B0C55be400e2a7D924032B257Fbc75Bbfd256E7"
 		}
 	]
 }

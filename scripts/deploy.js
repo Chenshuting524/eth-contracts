@@ -8,7 +8,7 @@ hre.web3 = new Web3(hre.network.provider);
 async function main() {
 
   [deployer] = await hre.ethers.getSigners();
-  
+
   // check if given networkId is registered
   var ChainID;
   var ChainName;
@@ -20,6 +20,8 @@ async function main() {
   }).catch((error) => {
     throw error;
   });;
+  netProvider=hre.config.networks[ChainName].url
+  console.log(netProvider)
 
   console.log("Start , deployer:".cyan, deployer.address.blue);
 
@@ -66,19 +68,24 @@ async function main() {
 
   console.log("\nDone.\n".magenta);
   
-  /*await getProvider().then((NetProvider) => {
-    console.log("netProvider:".cyan, NetProvider);
-  }).catch((error) => {
-    throw error;
-  });;*/
+  let provider=fs.readFileSync("./hardhat.config.js",(err,provider)=>{
+    if (err) {
+      throw err;
+    }else{
+      console.log("provider".magenta,provider.toString());
+    }  
+  });
+  console.log("provider".magenta,provider.toString());
+  //var NetProvider=JSON.parse(provider.toString())
+
   // 将合约内容构造成结构体格式
   var config = {
     Name:ChainName,
     ChainID : ChainID,
-    //Provider: NetProvider,
+    Provider: NetProvider,
     EthCrossChainData : eccd.address,
-    EthCrossChainManager : ccm.address,
-    EthCrossChainManagerProxy : ccmp.address,
+    EthCrossChainManagerImplemetation : ccm.address,
+    EthCrossChainManager : ccmp.address,
   };
    //读取原有的json文件
    let data=fs.readFileSync("./config1.json",(err,data)=>{
@@ -108,20 +115,14 @@ async function main() {
 async function updateConst(eccd, callerFactory) {
   const polyChainIdandName = await getPolyChainId();
 
-  await fs.writeFile('./contracts/core/cross_chain_manager/logic/Const.sol', 
+  fs.writeFileSync('./contracts/core/cross_chain_manager/logic/Const.sol', 
   'pragma solidity ^0.5.0;\n'+
   'contract Const {\n'+
   '    bytes constant ZionCrossChainManagerAddress = hex"5747C05FF236F8d18BB21Bc02ecc389deF853cae"; \n'+
-  '    bytes constant ZionValidaterManagerAddress = hex"A4Bf827047a08510722B2d62e668a72FCCFa232C"; \n'+
+  //'    bytes constant ZionValidaterManagerAddress = hex"A4Bf827047a08510722B2d62e668a72FCCFa232C"; \n'+
   '    address constant EthCrossChainDataAddress = '+eccd+'; \n'+
   '    address constant EthCrossChainCallerFactoryAddress = '+callerFactory+'; \n'+
-  '    uint constant chainId = '+polyChainIdandName[0]+'; \n}', 
-  function(err) {
-    if (err) {
-        console.error(err);
-        process.exit(1);
-    }
-  }); 
+  '    uint constant chainId = '+polyChainIdandName[0]+'; \n}')
 }
 
 async function getPolyChainId() {
@@ -130,34 +131,34 @@ async function getPolyChainId() {
     
     // mainnet
     case 1: // eth-main
-      return [2,"eth-main"];
+      return [2,"eth_main"];
     case 56: // bsc-main
-      return [6,"bsc-main"];
+      return [6,"bsc_main"];
     case 128: // heco-main
-      return [7,"heco-main"];
+      return [7,"heco_main"];
     case 137: // polygon-main
-      return [17,"polygon-main"];
+      return [17,"polygon_main"];
     case 66: // ok-main
-      return [12,"ok-main"];
+      return [12,"ok_main"];
     case 1718: // plt-main
-      return [8,"plt-main"];
+      return [8,"plt_main"];
 
     // testnet
     case 3: // eth-test
-      return [2,"eth-test"];
+      return [2,"eth_test"];
     case 97: // bsc-test
-      return [79,"bsc-test"];
+      return [79,"bsc_test"];
     case 256: // heco-test
-      return [7,"heco-test"];
+      return [7,"heco_test"];
     case 80001: // polygon-test
-      return [202,"polygon-test"];
+      return [202,"polygon_test"];
     case 65: // ok-test
-      return [200,"ok-test"];
+      return [200,"ok_test"];
     case 101: // plt-test
-      return [107,"plt-test"];
+      return [107,"plt_test"];
     //poly2.0
     case 5851://ontology-test
-      return [103,"ontology-test"]
+      return [103,"ontology_test"]
     // hardhat devnet
     case 31337:
       return [77777,"hardhat devnet"];

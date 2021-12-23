@@ -6,7 +6,11 @@ require("@nomiclabs/hardhat-waffle");
 module.exports = {
   solidity: "0.5.17",
   networks:{
-    ontology_testnet:{
+    /*hardhat_devnet:{
+      url:"http://polaris3.ont.io:20339",
+      accounts:[""]
+    },*/
+    ontology_test:{
       url:"http://polaris3.ont.io:20339",
       accounts:[""]
     },
