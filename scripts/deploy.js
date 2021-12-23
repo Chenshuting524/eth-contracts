@@ -76,9 +76,8 @@ async function main() {
     }  
   });
   console.log("provider".magenta,provider.toString());
-  //var NetProvider=JSON.parse(provider.toString())
 
-  // 将合约内容构造成结构体格式
+  // config 
   var config = {
     Name:ChainName,
     ChainID : ChainID,
@@ -87,7 +86,7 @@ async function main() {
     EthCrossChainManagerImplemetation : ccm.address,
     EthCrossChainManager : ccmp.address,
   };
-   //读取原有的json文件
+   //read previous config
    let data=fs.readFileSync("./config1.json",(err,data)=>{
       if (err) {
         throw err;
@@ -95,14 +94,11 @@ async function main() {
         previous=data.toString();
       }  
    });
-  //并将新的内容添加到文件中
+  //add new config
   //var buffer=JSON.stringify(data)
   var json=JSON.parse(data.toString())
   json.Network[json.Network.length]=config
   var jsonConfig =JSON.stringify(json,null,"\t")
-  /*
-  var previous=data.toString().concat(",")
-  var jsonConfig =previous.concat(JSON.stringify(config,null,"\t"));*/
   var outputPath = './config1.json';
   console.log("\njson output\n",jsonConfig);
   try {
@@ -169,13 +165,6 @@ async function getPolyChainId() {
   }
 }
 
-/*async function getProvider() {
-  const net= await hre.web3.providers.IpcProvider;
-  return net
-}*/
-
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
 main()
   .then(() => process.exit(0))
   .catch((error) => {
